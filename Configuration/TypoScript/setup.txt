@@ -1,0 +1,56 @@
+
+plugin.tx_threads_newthread {
+	view {
+		templateRootPaths.0 = {$plugin.tx_threads_newthread.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_threads_newthread.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_threads_newthread.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_threads_newthread.persistence.storagePid}
+	}
+}
+
+plugin.tx_threads_threads {
+	view {
+		templateRootPaths.0 = {$plugin.tx_threads_threads.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_threads_threads.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_threads_threads.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_threads_threads.persistence.storagePid}
+	}
+}
+
+plugin.tx_threads._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-threads table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-threads table th {
+		font-weight:bold;
+	}
+
+	.tx-threads table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

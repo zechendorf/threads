@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-11-25T10:09:57Z" product-name="threads">
+		<header/>
+		<body>
+			<trans-unit id="tx_threads_domain_model_thread">
+				<source>Thread</source>
+			</trans-unit>
+			<trans-unit id="tx_threads_domain_model_thread.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_threads_domain_model_thread.bodytext">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_threads_domain_model_thread.child_threads">
+				<source>Child Threads</source>
+			</trans-unit>
+			<trans-unit id="tx_threads_domain_model_thread.author">
+				<source>Author</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

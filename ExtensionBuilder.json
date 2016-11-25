@@ -1,0 +1,153 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    42,
+                    144
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Thread",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": true,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "593055396445"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "350620197685"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "bodytext",
+                            "propertyType": "Text",
+                            "uid": "104580462931"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "childThreads",
+                            "relationType": "zeroToMany",
+                            "relationWire": "[wired]",
+                            "uid": "861073183643"
+                        },
+                        {
+                            "foreignRelationClass": "TYPO3\\CMS\\Extbase\\Domain\\Model\\FrontendUser",
+                            "lazyLoading": true,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "author",
+                            "relationType": "manyToOne",
+                            "relationWire": "",
+                            "uid": "385517670617"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Allows comments on pages",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": ""
+        },
+        "extensionKey": "threads",
+        "name": "Threads",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "ZECHENDORF",
+                "email": "christopher@zechendorf.com",
+                "name": "Christopher Zechendorf",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Thread => new, create",
+                    "noncacheableActions": "Thread => create",
+                    "switchableActions": ""
+                },
+                "key": "newthread",
+                "name": "New Thread"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Thread => list,show",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "threads",
+                "name": "Threads"
+            }
+        ],
+        "vendorName": "ZECHENDORF"
+    },
+    "wires": [
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "861073183643"
+            },
+            "tgt": {
+                "moduleId": 0,
+                "terminal": "SOURCES",
+                "uid": "593055396445"
+            }
+        }
+    ],
+    "log": {
+        "last_modified": "2016-11-25 10:09",
+        "extension_builder_version": "7.6.0",
+        "be_user": " (1)"
+    }
+}

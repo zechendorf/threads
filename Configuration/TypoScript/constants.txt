@@ -1,0 +1,30 @@
+
+plugin.tx_threads_newthread {
+	view {
+		# cat=plugin.tx_threads_newthread/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:threads/Resources/Private/Templates/
+		# cat=plugin.tx_threads_newthread/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:threads/Resources/Private/Partials/
+		# cat=plugin.tx_threads_newthread/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:threads/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_threads_newthread//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+plugin.tx_threads_threads {
+	view {
+		# cat=plugin.tx_threads_threads/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:threads/Resources/Private/Templates/
+		# cat=plugin.tx_threads_threads/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:threads/Resources/Private/Partials/
+		# cat=plugin.tx_threads_threads/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:threads/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_threads_threads//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
