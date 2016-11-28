@@ -6,7 +6,7 @@ plugin.tx_threads_newthread {
 		layoutRootPaths.0 = {$plugin.tx_threads_newthread.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_threads_newthread.persistence.storagePid}
+		storagePid.data = page:uid
 	}
 }
 
@@ -17,7 +17,7 @@ plugin.tx_threads_threads {
 		layoutRootPaths.0 = {$plugin.tx_threads_threads.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_threads_threads.persistence.storagePid}
+		storagePid.data = page:uid
 	}
 }
 

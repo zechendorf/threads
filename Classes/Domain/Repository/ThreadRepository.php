@@ -31,6 +31,10 @@ namespace ZECHENDORF\Threads\Domain\Repository;
  */
 class ThreadRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
-    
+	public function findParentThreads()
+	{
+		$query = $this->createQuery();
+		$query->matching($query->equals('thread', 0));
+		return $query->execute();
+	}
 }

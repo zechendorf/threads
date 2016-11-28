@@ -47,7 +47,7 @@ class ThreadController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function listAction()
     {
-        $threads = $this->threadRepository->findAll();
+        $threads = $this->threadRepository->findParentThreads();
         $this->view->assign('threads', $threads);
     }
     

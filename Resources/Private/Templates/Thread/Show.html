@@ -1,22 +1,22 @@
-
-<f:layout name="Default" />
-
-This Template is responsible for displaying a single view for a domain object
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Show.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
-<f:section name="main">
-<h1>Single View for Thread</h1>
-
-<f:flashMessages />
-<f:render partial="Thread/Properties" arguments="{thread:thread}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Thread</f:link.action>
-</f:section>
+<h1>{thread.title}</h1>
+<blockquote>
+	<f:format.html>{thread.bodytext}</f:format.html>
+	<footer>{thread.author.username}</footer>
+</blockquote>
+<f:for each="{thread.childThreads}" as="answer">
+	<hr class="ce-div tall">
+	<div class="testimonial{f:if(condition:'{answer.author.usergroup.0.uid}==2',then:'',else: ' testimonial-style-3')}">
+		<blockquote>
+			<f:format.html>{answer.bodytext}</f:format.html>
+		</blockquote>
+		<div class="testimonial-arrow-down"></div>
+		<div class="testimonial-author">
+			<f:if condition="{answer.author.usergroup.0.uid}==2">
+			</f:if>
+			<p>
+				<strong>{answer.author.username}</strong>
+				<span>{answer.author.title}</span>
+			</p>
+		</div>
+	</div>
+</f:for>
