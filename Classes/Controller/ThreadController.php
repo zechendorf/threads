@@ -32,95 +32,95 @@ namespace ZECHENDORF\Threads\Controller;
 class ThreadController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
-    /**
-     * threadRepository
-     *
-     * @var \ZECHENDORF\Threads\Domain\Repository\ThreadRepository
-     * @inject
-     */
-    protected $threadRepository = NULL;
-    
-    /**
-     * action list
-     *
-     * @return void
-     */
-    public function listAction()
-    {
-        $threads = $this->threadRepository->findParentThreads();
-        $this->view->assign('threads', $threads);
-    }
-    
-    /**
-     * action show
-     *
-     * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
-     * @return void
-     */
-    public function showAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
-    {
-        $this->view->assign('thread', $thread);
-    }
-    
-    /**
-     * action new
-     *
-     * @return void
-     */
-    public function newAction()
-    {
-        
-    }
-    
-    /**
-     * action create
-     *
-     * @param \ZECHENDORF\Threads\Domain\Model\Thread $newThread
-     * @return void
-     */
-    public function createAction(\ZECHENDORF\Threads\Domain\Model\Thread $newThread)
-    {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->threadRepository->add($newThread);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action edit
-     *
-     * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
-     * @ignorevalidation $thread
-     * @return void
-     */
-    public function editAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
-    {
-        $this->view->assign('thread', $thread);
-    }
-    
-    /**
-     * action update
-     *
-     * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
-     * @return void
-     */
-    public function updateAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
-    {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->threadRepository->update($thread);
-        $this->redirect('list');
-    }
-    
-    /**
-     * action delete
-     *
-     * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
-     * @return void
-     */
-    public function deleteAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
-    {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->threadRepository->remove($thread);
-        $this->redirect('list');
-    }
+	/**
+	 * threadRepository
+	 *
+	 * @var \ZECHENDORF\Threads\Domain\Repository\ThreadRepository
+	 * @inject
+	 */
+	protected $threadRepository = NULL;
+	
+	/**
+	 * action list
+	 *
+	 * @return void
+	 */
+	public function listAction()
+	{
+		$threads = $this->threadRepository->findParentThreads();
+		$this->view->assign('threads', $threads);
+	}
+	
+	/**
+	 * action show
+	 *
+	 * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
+	 * @return void
+	 */
+	public function showAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
+	{
+		$this->view->assign('thread', $thread);
+	}
+	
+	/**
+	 * action new
+	 *
+	 * @return void
+	 */
+	public function newAction()
+	{
+			
+	}
+	
+	/**
+	 * action create
+	 *
+	 * @param \ZECHENDORF\Threads\Domain\Model\Thread $newThread
+	 * @return void
+	 */
+	public function createAction(\ZECHENDORF\Threads\Domain\Model\Thread $newThread)
+	{
+		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+		$this->threadRepository->add($newThread);
+		$this->redirect('list');
+	}
+	
+	/**
+	 * action edit
+	 *
+	 * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
+	 * @ignorevalidation $thread
+	 * @return void
+	 */
+	public function editAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
+	{
+			$this->view->assign('thread', $thread);
+	}
+	
+	/**
+	 * action update
+	 *
+	 * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
+	 * @return void
+	 */
+	public function updateAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
+	{
+		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+		$this->threadRepository->update($thread);
+		$this->redirect('list');
+	}
+	
+	/**
+	 * action delete
+	 *
+	 * @param \ZECHENDORF\Threads\Domain\Model\Thread $thread
+	 * @return void
+	 */
+	public function deleteAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
+	{
+		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+		$this->threadRepository->remove($thread);
+		$this->redirect('list');
+	}
 
 }
