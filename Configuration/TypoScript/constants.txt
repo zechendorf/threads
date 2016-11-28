@@ -27,4 +27,8 @@ plugin.tx_threads_threads {
 		# cat=plugin.tx_threads_threads//a; type=string; label=Default storage PID
 		storagePid =
 	}
+	settings {
+		# cat=plugin.tx_threads_threads//a; type=string; label=Highlight thread if user in group
+		feUserHighlightGroups = 
+	}
 }

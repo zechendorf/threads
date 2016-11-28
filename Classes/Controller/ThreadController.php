@@ -59,6 +59,7 @@ class ThreadController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 */
 	public function showAction(\ZECHENDORF\Threads\Domain\Model\Thread $thread)
 	{
+		$this->view->assign('highlightGroups', $this->settings['feUserHighlightGroups']);
 		$this->view->assign('thread', $thread);
 	}
 	

@@ -19,6 +19,9 @@ plugin.tx_threads_threads {
 	persistence {
 		storagePid.data = page:uid
 	}
+	settings {
+		feUserHighlightGroups = {$plugin.tx_threads_threads.settings.feUserHighlightGroups}
+	}
 }
 
 plugin.tx_threads._CSS_DEFAULT_STYLE (

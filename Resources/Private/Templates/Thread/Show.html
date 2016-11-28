@@ -1,3 +1,4 @@
+{namespace threads=ZECHENDORF\Threads\ViewHelpers}
 <h1>{thread.title}</h1>
 <blockquote>
 	<f:format.html>{thread.bodytext}</f:format.html>
@@ -5,7 +6,7 @@
 </blockquote>
 <f:for each="{thread.childThreads}" as="answer">
 	<hr class="ce-div tall">
-	<div class="testimonial{f:if(condition:'{answer.author.usergroup.0.uid}==2',then:'',else: ' testimonial-style-3')}">
+	<div class="testimonial{f:if(condition:'{threads:isHighlightThread(feUser:answer.author,highlightGroups:highlightGroups)}',then:'',else: ' testimonial-style-3')}">
 		<blockquote>
 			<f:format.html>{answer.bodytext}</f:format.html>
 		</blockquote>
